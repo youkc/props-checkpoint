@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ProfileImg from "./logo.svg";
+import Profile from "./profile/Profile";
 
-function App() {
+const App = () => {
+  const userInfos = {
+    fullName: "Youssoupha CASSE",
+    bio: "Lorem ipsum...",
+    profession: "Front-end developper",
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="App" style={{ padding: "100px" }}>
+        <Profile
+          fullName={userInfos.fullName}
+          bio={userInfos.bio}
+          profession={userInfos.profession}
         >
-          Learn React
-        </a>
-      </header>
+          <img src={ProfileImg} alt="Myphoto" style={{ "height":"100px","width":"100px","objectFit":"cover","borderRadius":"50px" }} />
+        </Profile>
+
     </div>
   );
-}
+};
 
 export default App;
