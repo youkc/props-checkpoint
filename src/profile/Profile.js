@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 
 const Profile = (props) => {
 
-    const handleName = (e) => {
-        let name = props.fullName
-        alert(name);
-    }
-
   return (
     <div className="card" style={{ display:"flex", flexWrap:"wrap", alignItems:"center", backgroundColor:"#fff", maxWidth:"450px", margin:"auto", padding:"30px 30px 60px", borderRadius:"20px", boxShadow:"0 0 20px rgb(6 72 86 / 15%)", fontSize:"20px" }}>
       {props.children}
@@ -22,7 +17,8 @@ const Profile = (props) => {
           <strong>Profession:</strong> {props.profession}
         </li>
       </ul>
-      <a href="/#" onClick={handleName} style={{ background: "#000", color: "#fff", padding: "10px 20px", textDecoration: "none", borderRadius:"8px" }} >Clique ici </a>
+
+      <a href="/#" onClick={props.handleName} style={{ background: "#000", color: "#fff", padding: "10px 20px", textDecoration: "none", borderRadius:"8px" }} >Clique ici </a>
 
     </div>
   );
@@ -32,6 +28,7 @@ Profile.propTypes = {
     fullName: PropTypes.string,
     profession: PropTypes.string,
     bio : PropTypes.string,
+    handleName: PropTypes.func,
 };
 
 Profile.defaultProps = {
